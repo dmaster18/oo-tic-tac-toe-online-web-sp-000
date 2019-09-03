@@ -101,7 +101,7 @@ class TicTacToe
   end
   
   def draw?
-    if full? == true && won? == false
+    if full? == true && won? == nil
       true
     else
       false
@@ -117,8 +117,8 @@ class TicTacToe
   end
   
   def winner
-    if won? == true 
-      winner = won?[0]
+    if full? == true && won? != nil 
+      winner = @board[won?[0]]
     end
     winner
   end
@@ -133,5 +133,5 @@ class TicTacToe
       puts "This game of Tic-Tac-Toe has ended in a draw."
     end
   end
-  
 end
+
